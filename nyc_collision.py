@@ -4,7 +4,7 @@ import pandas as pd
 import pydeck as pdk
 import plotly.express as px
 
-DATA_URL = ("G:\Desktop\data science web app\Motor_Vehicle_Collisions_-_Crashes.csv")
+DATA_URL = ("Motor_Vehicle_Collisions_-_Crashes.csv")
 
 st.title("Motor vehicle collisions in New York City")
 st.markdown("This application is a streamlit dashboard that can be used to analyze motor vehicle collisions in NYC")
@@ -23,7 +23,7 @@ def load_data(nrows):
 	return data
 
 
-data = load_data(100000)
+data = load_data(70000)
 original_data = data
 
 st.header("where are the most people injured in NYC ?")
