@@ -34,7 +34,7 @@ if st.checkbox("show raw data",False):
 	st.write(data)
 
 
-st.map(data.query("injured_persons >= @injured_people")[['latitude','longitude']].dropna(how="any"))
+st.map(data.query("'number of persons injured' > @injured_people")[['latitude','longitude']].dropna(how="any"))
 
 st.header("How many collisions occur during a given time of a day?")
 hour = st.slider("Hour to look at ",0,23)
