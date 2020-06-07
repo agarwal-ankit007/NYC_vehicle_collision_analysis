@@ -29,6 +29,11 @@ original_data = data
 st.header("where are the most people injured in NYC ?")
 injured_people = st.slider("No. of persons injured in vehicle collisions",0,19)
 
+if st.checkbox("show raw data",False):
+	st.subheader('Raw Data')
+	st.write(data)
+
+
 st.map(data.query("injured_persons >= @injured_people")[['latitude','longitude']].dropna(how="any"))
 
 st.header("How many collisions occur during a given time of a day?")
@@ -79,6 +84,3 @@ elif select == 'cyclists':
 else:
 	st.write(original_data.query("injured_motorists >= 1")[["on street name","injured_motorists"]].sort_values(by = ['injured_motorists'],ascending = False).dropna(how='any')[:5])
 
-if st.checkbox("show raw data",False):
-	st.subheader('Raw Data')
-	st.write(data)
