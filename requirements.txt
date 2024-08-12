@@ -2,4 +2,4 @@ pandas==1.0.3
 numpy==1.18.3
 plotly==4.8.1
 pydeck==0.3.1
-streamlit==0.61.0
+streamlit==1.37.0
